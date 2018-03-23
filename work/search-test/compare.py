@@ -9,12 +9,13 @@ VERBOSE = False  # enhanced print
 
 begin_datetimestamp = 48 * 365.25 * 24 * 3600
 
-#UPDATE_PERIOD = 7 * 24 * 3600  # change to an argument
+UPDATE_PERIOD = 7 * 24 * 3600  # change to an argument
 
-UPDATE_PERIOD = 20 * 60
+#UPDATE_PERIOD = 20 * 60
 
-#UPDATE_PERIOD_DAYS = 7
-UPDATE_PERIOD_MIN = 20
+UPDATE_PERIOD_DAYS = 7
+#UPDATE_PERIOD_MIN = 7 * 24 * 60
+
 from datetime import datetime
 
 from dateutil import parser as duparser
@@ -114,13 +115,20 @@ def convert_test(oldfn, newfn, case, intime):
 			lookup = old_dict[rec["master_id"]]
 			newpub = True
 
+			oldids = []
+
 			for oldrec in lookup:
 				oldvers = oldrec["version"]
-				print oldvers, newvers
+#				print oldvers, newvers
 				if  oldvers >= newvers:
 					print outpre,mstr, "F-Not-new-version", newvers,  oldvers
 				else:
-					print outpre,mstr, "E-New-version", newvers,  oldvers
+					oldids.append(oldvers)
+			
+			if len(oldids) > 0:
+				print outpre,mstr, "E-New-version", newvers,  ','.join(oldids)
+			else:
+				print outpre,mstr, "G-Version-update-bug", newvers
 
 if len(sys.argv) < 4:
 	print "Usage:"
