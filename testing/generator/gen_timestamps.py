@@ -3,12 +3,18 @@ from datetime import datetime as dt
 
 begin_datetimestamp = 48 * 365.25 * 24 * 3600
 
-week = 60 * 60 * 24 * 7
+
+
+#week = 60 * 60 * 24 * 7
+
+period_time = 60 *20
 
 NUM_PERIODS = 8
 count = 4   # Per period
 
-period = week / count
+period = period_time / count
+
+#period = week / count
 
 hp = period  / 2
 

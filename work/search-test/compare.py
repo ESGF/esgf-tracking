@@ -9,12 +9,13 @@ VERBOSE = False  # enhanced print
 
 begin_datetimestamp = 48 * 365.25 * 24 * 3600
 
-UPDATE_PERIOD = 7 * 24 * 3600  # change to an argument
+#UPDATE_TYPE = "DAYS"
+UPDATE_TYPE = "SECOND"
+#UPDATE_PERIOD = 7 * 24 * 3600  # change to an argument
 
-#UPDATE_PERIOD = 20 * 60
+UPDATE_PERIOD = 20 * 60
 
 UPDATE_PERIOD_DAYS = 7
-#UPDATE_PERIOD_MIN = 7 * 24 * 60
 
 from datetime import datetime
 
@@ -72,7 +73,12 @@ def convert_test(oldfn, newfn, case, intime):
 		delta = intime - dset_time 
 
 #		print "delta days", delta.days
-		if delta.days < UPDATE_PERIOD_DAYS:
+		update_cond = False
+		if UPDATE_TYPE == "DAYS":
+			update_cond = (delta.days < UPDATE_PERIOD_DAYS)
+		else:
+			update_cond = (delta.seconds < UPDATE_PERIOD)
+		if update_cond:
 			if rec["retracted"]:
 #				print "found retracted in UPDATE_PERIOD", rec["master_id"]
 				retract_lst.append(rec)
@@ -95,7 +101,7 @@ def convert_test(oldfn, newfn, case, intime):
 #			print len(lookup), "datasets in retratcted set"
 			for n in lookup:
 #				print  n 
-				if not n["retracted"]:
+				if (not n["retracted"]) and n["latest"]:
 
 					print outpre, master_id, "A-New-Retratction"
 				elif VERBOSE:
