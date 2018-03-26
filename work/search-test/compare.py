@@ -4,7 +4,7 @@ import sys, json
 
 #new = json.load(open(sys.argv[2]))
 
-VERBOSE = False  # enhanced print
+VERBOSE = True  # enhanced print
 
 
 begin_datetimestamp = 48 * 365.25 * 24 * 3600

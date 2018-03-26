@@ -27,6 +27,8 @@ DCOUNT = len(dset_list)
 
 dsarr = range(DCOUNT)
 
+p_count = 0
+
 for i in range(DCOUNT):
 
 	x = int(rnd()* DCOUNT )
@@ -36,9 +38,9 @@ for i in range(DCOUNT):
 
 outlst = []
 
-period = 4  # Count per period
+PERIOD = 4  # Count per period
 
-BASE = 2 * period  # number of new-only events to complete
+BASE = 2 * PERIOD # number of new-only events to complete
 
 
 
@@ -63,14 +65,14 @@ for i, ts in  enumerate(open(timestamps)):
 		append_to_list(outlst, dset, version, ts)
 		print i, dset, "D-New-Dataset"
 	else:
-		if i % period <  (period -2):
+		if i % PERIOD <  (PERIOD -2):
 			idx = dsarr.pop()
 			dset = dset_list[idx][0]
 			version = "v" + dset_list[idx][1]
 			append_to_list(outlst, dset, version, ts)
 			print i, dset, "D-New-Dataset"
 
-		elif i % period == (period - 2):
+		elif i % PERIOD == (PERIOD - 2):
 			# new version should be from old datasets - try this - could be retracted
 
 			listlenbase = (len(outlst) - 2)
@@ -98,12 +100,16 @@ for i, ts in  enumerate(open(timestamps)):
 			print i, dset, "E-New-version", oldversion, version
 
 		else:
-			assert(i % period == period -1)
+			assert(i % PERIOD == PERIOD -1)
 			#addition of quick retraction
 
 			choice = -1
 			while True:
-				choice = int(rnd() * (len(outlst) -3))
+
+				if p_count == (TOT_PERIODS - 1):
+					choice = ((TOT_PERIODS - 2) * PERIOD)
+				else:
+					choice = int(rnd() * (len(outlst) -3))
 
 				dset_rec = outlst[choice]
 				if (not dset_rec["retracted"]) and dset_rec["latest"]:
@@ -116,9 +122,10 @@ for i, ts in  enumerate(open(timestamps)):
 			outlst[choice]["_timestamp"] = ts
 			print i, dset, "A-New-Retraction"
 
-	if i % period == period -1:
+	if i % PERIOD == PERIOD -1:
 
-		write_out(outlst, i / period)
+		write_out(outlst, i / PERIOD)
+		p_count += 1
 
 
 
