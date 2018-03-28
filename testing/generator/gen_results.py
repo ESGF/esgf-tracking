@@ -12,6 +12,8 @@ def write_out(lst, step):
 dataset_ids = "dset_id.lst"
 timestamps = "ts.txt"
 
+DEBUG = False
+
 TOT_PERIODS = 8
 
 dset_list = []
@@ -55,6 +57,8 @@ def append_to_list(outlist, dset, version, ts):
 	record["latest"] = True
 	outlist.append(record)
 
+quick_retract = -1
+
 for i, ts in  enumerate(open(timestamps)):
 
 	if i < BASE:
@@ -70,7 +74,7 @@ for i, ts in  enumerate(open(timestamps)):
 			dset = dset_list[idx][0]
 			version = "v" + dset_list[idx][1]
 			append_to_list(outlst, dset, version, ts)
-			print i, dset, "D-New-Dataset"
+			print i, len(outlst) - 1, dset, "D-New-Dataset"
 
 		elif i % PERIOD == (PERIOD - 2):
 			# new version should be from old datasets - try this - could be retracted
@@ -83,7 +87,26 @@ for i, ts in  enumerate(open(timestamps)):
 			# quick new version
 
 			while True:
-				choice = int(rnd() * listlenbase)
+
+				if p_count == (TOT_PERIODS - 2):
+
+					if DEBUG:
+						print "find quick new version"
+					choice = ((TOT_PERIODS - 3) * PERIOD)
+					if DEBUG:
+						print "cat one", choice, len(outlst) 
+						print outlst[choice]
+				elif p_count == (TOT_PERIODS - 3):
+					if DEBUG:
+						print "find previous retraction"
+					choice =quick_retract
+					if DEBUG:
+						print "cat two", choice, len(outlst) 
+						print outlst[choice]
+					dset_rec = outlst[choice]
+					break
+				else:
+					choice = int(rnd() * listlenbase)
 				dset_rec = outlst[choice]
 
 				if dset_rec["latest"]:
@@ -97,19 +120,25 @@ for i, ts in  enumerate(open(timestamps)):
 			version = "v" + str(numversion + 1)
 			outlst[choice]["latest"] = False
 			append_to_list(outlst, dset, version, ts)			
-			print i, dset, "E-New-version", oldversion, version
+			print i, choice, dset, "E-New-version", oldversion, version
 
 		else:
 			assert(i % PERIOD == PERIOD -1)
-			#addition of quick retraction
+
 
 			choice = -1
 			while True:
 
 				if p_count == (TOT_PERIODS - 1):
+					# quick retraction
 					choice = ((TOT_PERIODS - 2) * PERIOD)
+					if DEBUG:
+						print choice, len(outlst), "C-Quick-Retraction"
+					ret_str = "C-Quick-Retraction"
 				else:
 					choice = int(rnd() * (len(outlst) -3))
+					ret_str = "A-New-Retraction"
+					quick_retract= choice
 
 				dset_rec = outlst[choice]
 				if (not dset_rec["retracted"]) and dset_rec["latest"]:
@@ -120,12 +149,12 @@ for i, ts in  enumerate(open(timestamps)):
 			outlst[choice]["latest"] = False
 
 			outlst[choice]["_timestamp"] = ts
-			print i, dset, "A-New-Retraction"
+			print i, choice, dset, ret_str
 
 	if i % PERIOD == PERIOD -1:
 
 		write_out(outlst, i / PERIOD)
-		p_count += 1
+		p_count = p_count + 1
 
-
+assert(p_count == TOT_PERIODS)
 
