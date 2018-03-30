@@ -23,6 +23,9 @@ from dateutil import parser as duparser
 from dateutil import tz
 
 
+INPUT_FILE = "subscriptions.json"
+
+
 # UPDATE_PERIOD = 17 # days ; so must be at least one
 
 def convert(ts):

@@ -24,7 +24,7 @@ class FileSubscriptionMatcher(BaseMatcher):
 
 		for pair in pairs:
 
-			if not pair["value"] == dataset[pair["key"]]:
+			if dataset[pair["key"]] in pair["value"]:
 				return False
 
 		return True
