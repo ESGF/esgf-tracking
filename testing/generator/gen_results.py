@@ -51,10 +51,18 @@ nv_choice = -1
 def append_to_list(outlist, dset, version, ts):
 	record = {}
 	record["master_id"] = dset
+	parts = dset.split('.')
+
+	experiment = parts[4]
+	variable = parts[7]
+
 	record["version"] = version
 	record["retracted"] = False
 	record["_timestamp"] = ts
 	record["latest"] = True
+	record["experiment_id"] = experiment
+	record["variable_id"] = variable
+	record["instance_id"] = dset + "." + version
 	outlist.append(record)
 
 quick_retract = -1

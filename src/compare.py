@@ -1,32 +1,17 @@
 import sys, json
-
-#old = json.load(open(sys.argv[1]))
-
-#new = json.load(open(sys.argv[2]))
-
-VERBOSE = True  # enhanced print
-
-
-begin_datetimestamp = 48 * 365.25 * 24 * 3600
-
-#UPDATE_TYPE = "DAYS"
-UPDATE_TYPE = "SECOND"
-#UPDATE_PERIOD = 7 * 24 * 3600  # change to an argument
-
-UPDATE_PERIOD = 20 * 60
-
-UPDATE_PERIOD_DAYS = 7
-
+from user_match import FileSubscriptionMatcher
 from datetime import datetime
-
 from dateutil import parser as duparser
 from dateutil import tz
 
-
+VERBOSE = True  # enhanced print
+begin_datetimestamp = 48 * 365.25 * 24 * 3600
+#UPDATE_TYPE = "DAYS"
+UPDATE_TYPE = "SECOND"
+#UPDATE_PERIOD = 7 * 24 * 3600  # change to an argument
+UPDATE_PERIOD = 20 * 60
+UPDATE_PERIOD_DAYS = 7
 INPUT_FILE = "subscriptions.json"
-
-
-# UPDATE_PERIOD = 17 # days ; so must be at least one
 
 def convert(ts):
 
@@ -48,8 +33,27 @@ def get_latest(obj):
 
 	return oldts
 
-
 def convert_test(oldfn, newfn, case, intime):
+	res = compare_results(oldfn, newfn, case, intime)
+	for it in res:
+		print it["master_id"], it["update_status"]
+
+
+SUBSFN = "/Users/ames4/git-repos/esgf-tracking/work/search-test/subs.json"
+
+def subs_test(oldfn, newfn, case, intime):
+	search_res = compare_results(oldfn, newfn, case, intime)
+	matcher = FileSubscriptionMatcher(SUBSFN)
+
+	user_res = matcher.match(search_res)
+
+	print json.dumps(user_res, indent=1)
+
+
+
+def compare_results(oldfn, newfn, case, intime):
+
+	output_arr = []
 
 	outpre = str(case) + " " + oldfn + " " + newfn
 	retract_lst = []
@@ -106,7 +110,8 @@ def convert_test(oldfn, newfn, case, intime):
 #				print  n 
 				if (not n["retracted"]) and n["latest"]:
 
-					print outpre, master_id, "A-New-Retratction"
+					output_arr.append(n)
+					output_arr[-1]["update_status"] = "new-retraction"
 				elif VERBOSE:
 					print outpre, master_id, "B-Old-Retratction"
 
@@ -118,7 +123,9 @@ def convert_test(oldfn, newfn, case, intime):
 		mstr = rec["master_id"]
 
 		if not mstr in old_dict:
-			print outpre, mstr, "D-New-Dataset"
+			output_arr.append(rec)
+			output_arr[-1]["update_status"] = "new-dataset"
+
 		else:
 			newvers = rec["version"]
 			lookup = old_dict[rec["master_id"]]
@@ -135,9 +142,12 @@ def convert_test(oldfn, newfn, case, intime):
 					oldids.append(oldvers)
 			
 			if len(oldids) > 0:
-				print outpre,mstr, "E-New-version", newvers,  ','.join(oldids)
+				output_arr.append(rec)
+				output_arr[-1]["update_status"] = "new-version"
+
 			else:
 				print outpre,mstr, "G-Version-update-bug", newvers
+	return output_arr
 
 if len(sys.argv) < 4:
 	print "Usage:"
@@ -163,7 +173,7 @@ for case, fn in enumerate(infiles[0:-1]):
 	idx = case +1
 
 #	print "Time of query: " , cur_ts
-
 	convert_test(fn, infiles[idx], case, datetime.utcfromtimestamp(cur_ts) )	
+	subs_test(fn, infiles[idx], case, datetime.utcfromtimestamp(cur_ts) )	
 
 

@@ -1,4 +1,4 @@
-
+import json
 
 from esgcet.exceptions import ESGMethodNotImplemented
 
@@ -20,35 +20,38 @@ class FileSubscriptionMatcher(BaseMatcher):
 		self.profile_records = json.load(open(inputfile))
 		# get config
 
-	def match_record(pairs, dataset):
+	def extract_fields(self, rec):
+
+		return { "master_id" : rec["master_id"] , "update_status" : rec["update_status"]}
+
+	def match_record(self, pairs, dataset):
 
 		for pair in pairs:
 
-			if dataset[pair["key"]] in pair["value"]:
+			if not dataset[pair["key"]] in pair["value"]:
 				return False
 
 		return True
 
-	def match(comp_report):
+	def match(self, comp_report):
 
-		outdict = {}
+		self.outdict = {}
 
 		for comp_record in comp_report:
 
-			for query_record in profile_records:		
+			for query_record in self.profile_records:		
 
-				if match_record(query_record["pairs"], comp_record)
+				if self.match_record(query_record["pairs"], comp_record):
 
-
-					for user in record["users"]:
+					for user in query_record["users"]:
 
 						if not user in outdict:
-							outdict["user"] = [comp_record]
+							outdict[user] = [self.extract_fields(comp_record)]
 						else:
 
-							usrlst = outdict["user"]
-							usrlst.append("comp_record")
-							outdict["user"] = usrlst
-		return outdict
+							usrlst = outdict[user]
+							usrlst.append(self.extract_fields(comp_record))
+							outdict[user] = usrlst
+		
 
 
