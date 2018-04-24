@@ -3,6 +3,8 @@ import json
 from esgcet.exceptions import ESGMethodNotImplemented
 
 
+from db_access import get_table
+
 class BaseMatcher :
 
 	def __init__(self, *args):
@@ -13,11 +15,11 @@ class BaseMatcher :
 
 
 
-class FileSubscriptionMatcher(BaseMatcher):
+class SubscriptionMatcher(BaseMatcher):
 
 	def __init__(self, inputfile):
 
-		self.profile_records = json.load(open(inputfile))
+		raise ESGMethodNotImplemented
 		# get config
 
 	def extract_fields(self, rec):
@@ -54,4 +56,44 @@ class FileSubscriptionMatcher(BaseMatcher):
 							outdict[user] = usrlst
 		
 
+
+class FileSubscriptionMatcher(SubscriptionMatcher):
+
+	def __init__(self, inputfile):
+
+		self.profile_records = json.load(open(inputfile))
+
+
+class DBSubscriptionMatcher(SubscriptionMatcher):
+
+	def format_kv(row):
+
+		return {"key": row[1], "value": row[2] }
+
+
+
+	def db_to_json():
+
+
+		dbtable = get_table()
+
+		tmp_dict = {}
+		outjson = []
+
+		for row in dbtable:
+
+			key = row[0]
+			if key in tmp_dict:
+				tmpin = tmp_dict[key]
+				tmpin.append(self.format_kv(row))
+				tmp_dict[key] = tmpin	
+			else:
+				tmp_dict[key] = [self.format_kv(row)]
+		for key in tmp_dict:
+			outjson.append({ "pairs": tmp_dict[key] , "users": [key]})
+
+		return outjson
+
+	def __init__(self):
+		self.profile_records = self.db_to_json()
 

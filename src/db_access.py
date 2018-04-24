@@ -38,10 +38,9 @@ def get_table():
     if not has_db:
         return None
 
-    qstr = "select * from esgf_subscriptions.email_subs"
+    qstr = "select * from esgf_subscriptions.subscribers"
 
     db_result = db_engine.execute(qstr)
-
 
     return db_result
 
