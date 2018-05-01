@@ -3,8 +3,6 @@ import json
 from esgcet.exceptions import ESGMethodNotImplemented
 
 
-from db_access import ESG_DB_Access
-
 class BaseMatcher :
 
 	def __init__(self, *args):
@@ -37,7 +35,7 @@ class SubscriptionMatcher(BaseMatcher):
 
 	def match(self, comp_report):
 
-		self.outdict = {}
+		outdict = {}
 
 		for comp_record in comp_report:
 
@@ -54,7 +52,7 @@ class SubscriptionMatcher(BaseMatcher):
 							usrlst = outdict[user]
 							usrlst.append(self.extract_fields(comp_record))
 							outdict[user] = usrlst
-		
+		return outdict
 
 
 class FileSubscriptionMatcher(SubscriptionMatcher):
@@ -74,6 +72,7 @@ class DBSubscriptionMatcher(SubscriptionMatcher):
 
 	def db_to_json():
 
+		from db_access import ESG_DB_Access
 
 		try:  
 			db = ESG_DB_Access
@@ -98,5 +97,7 @@ class DBSubscriptionMatcher(SubscriptionMatcher):
 		return outjson
 
 	def __init__(self):
+
+
 		self.profile_records = self.db_to_json()
 
