@@ -11,7 +11,7 @@ has_db = False
 
 class ESG_DB_Access:
 
-    def  __init__():
+    def  __init__(self):
     
 
         self.engine = None
@@ -39,15 +39,15 @@ class ESG_DB_Access:
         self.has_db = True
     
 
-    def get_table():
+    def get_table(self):
 
 
         if not self.has_db:
             return None
 
-        qstr = "select * from esgf_subscriptions.subscribers"
+        qstr = "select * from esgf_subscription.subscribers"
 
-        db_result = db_engine.execute(qstr)
+        db_result = self.engine.execute(qstr)
 
         return db_result
 

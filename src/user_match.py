@@ -3,7 +3,7 @@ import json
 from esgcet.exceptions import ESGMethodNotImplemented
 
 
-from db_access import get_table
+from db_access import ESGF_DB_Access
 
 class BaseMatcher :
 
@@ -75,8 +75,11 @@ class DBSubscriptionMatcher(SubscriptionMatcher):
 	def db_to_json():
 
 
-		dbtable = get_table()
-
+		try:  
+			db = ESG_DB_Access
+			dbtable = db.get_table()
+		except:
+			raise 
 		tmp_dict = {}
 		outjson = []
 
