@@ -1,0 +1,186 @@
+{
+    "response": {
+        "docs": [
+            {
+                "_timestamp": "2018-01-01T00:57:30\n",
+                "experiment_id": "1pctCO2",
+                "latest": false,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.CFmon.tntr.gr",
+                "retracted": true,
+                "variable_id": "tntr",
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T00:07:30\n",
+                "experiment_id": "1pctCO2",
+                "latest": false,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Lmon.mrro.gr",
+                "retracted": false,
+                "variable_id": "mrro",
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T01:37:30\n",
+                "experiment_id": "1pctCO2",
+                "latest": false,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Lmon.lai.gr",
+                "retracted": true,
+                "variable_id": "lai",
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T00:17:30\n",
+                "experiment_id": "piControl",
+                "latest": true,
+                "master_id": "cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Emon.tnhusscp.gr1",
+                "retracted": false,
+                "variable_id": "tnhusscp",
+                "version": "v20180128"
+            },
+            {
+                "_timestamp": "2018-01-01T00:22:30\n",
+                "experiment_id": "1pctCO2",
+                "latest": true,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Amon.hfss.gr",
+                "retracted": false,
+                "variable_id": "hfss",
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T00:27:30\n",
+                "experiment_id": "1pctCO2",
+                "latest": true,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Omon.so.gn",
+                "retracted": false,
+                "variable_id": "so",
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T01:17:30\n",
+                "experiment_id": "piControl",
+                "latest": false,
+                "master_id": "cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Amon.clivi.gr1",
+                "retracted": true,
+                "variable_id": "clivi",
+                "version": "v20180128"
+            },
+            {
+                "_timestamp": "2018-01-01T00:37:30\n",
+                "experiment_id": "1pctCO2",
+                "latest": false,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.day.prc.gr",
+                "retracted": false,
+                "variable_id": "prc",
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T00:42:30\n",
+                "experiment_id": "1pctCO2",
+                "latest": true,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Lmon.c4PftFrac.gr",
+                "retracted": false,
+                "variable_id": "c4PftFrac",
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T00:47:30\n",
+                "experiment_id": "1pctCO2",
+                "latest": true,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Amon.va.gr",
+                "retracted": false,
+                "variable_id": "va",
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T00:52:30\n",
+                "experiment_id": "1pctCO2",
+                "latest": true,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.day.prc.gr",
+                "retracted": false,
+                "variable_id": "prc",
+                "version": "v20180118"
+            },
+            {
+                "_timestamp": "2018-01-01T01:02:30\n",
+                "experiment_id": "piControl",
+                "latest": false,
+                "master_id": "cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.AERmon.od550lt1aer.gr1",
+                "retracted": false,
+                "variable_id": "od550lt1aer",
+                "version": "v20180128"
+            },
+            {
+                "_timestamp": "2018-01-01T01:57:30\n",
+                "experiment_id": "piControl",
+                "latest": false,
+                "master_id": "cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.CFmon.hus.gr1",
+                "retracted": true,
+                "variable_id": "hus",
+                "version": "v20180128"
+            },
+            {
+                "_timestamp": "2018-01-01T01:12:30\n",
+                "experiment_id": "1pctCO2",
+                "latest": true,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Lmon.mrro.gr",
+                "retracted": false,
+                "variable_id": "mrro",
+                "version": "v20180118"
+            },
+            {
+                "_timestamp": "2018-01-01T01:22:30\n",
+                "experiment_id": "piControl",
+                "latest": true,
+                "master_id": "cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Lmon.pastureFrac.gr1",
+                "retracted": false,
+                "variable_id": "pastureFrac",
+                "version": "v20180128"
+            },
+            {
+                "_timestamp": "2018-01-01T01:27:30\n",
+                "experiment_id": "piControl",
+                "latest": true,
+                "master_id": "cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.AERmon.so2.gr1",
+                "retracted": false,
+                "variable_id": "so2",
+                "version": "v20180128"
+            },
+            {
+                "_timestamp": "2018-01-01T01:32:30\n",
+                "experiment_id": "piControl",
+                "latest": true,
+                "master_id": "cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.AERmon.od550lt1aer.gr1",
+                "retracted": false,
+                "variable_id": "od550lt1aer",
+                "version": "v20180129"
+            },
+            {
+                "_timestamp": "2018-01-01T01:42:30\n",
+                "experiment_id": "1pctCO2",
+                "latest": true,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Eday.ta850.gr",
+                "retracted": false,
+                "variable_id": "ta850",
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T01:47:30\n",
+                "experiment_id": "1pctCO2",
+                "latest": true,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.CFday.cltisccp.gr",
+                "retracted": false,
+                "variable_id": "cltisccp",
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T01:52:30\n",
+                "experiment_id": "1pctCO2",
+                "latest": true,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Lmon.lai.gr",
+                "retracted": false,
+                "variable_id": "lai",
+                "version": "v20180118"
+            }
+        ]
+    }
+}

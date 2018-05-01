@@ -1,0 +1,24 @@
+{
+    "response": {
+        "docs": [
+            {
+                "_timestamp": "2018-01-02T04:00:00\n",
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Amon.evspsbl.gr",
+                "retracted": false,
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-04T12:00:00\n",
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Emon.thetaot.gn",
+                "retracted": false,
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-06T20:00:00\n",
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Amon.rsdt.gr",
+                "retracted": false,
+                "version": "v20180117"
+            }
+        ]
+    }
+}

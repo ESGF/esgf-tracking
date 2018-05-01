@@ -1,0 +1,43 @@
+
+BEGIN ROUND 0
+
+0 results.0.json results.1.json cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.CFmon.rlucs4co2.gr D New-Dataset!
+0 results.0.json results.1.json cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Omon.tob.gn D New-Dataset!
+0 results.0.json results.1.json cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Amon.clivi.gr1 D New-Dataset!
+
+BEGIN ROUND 1
+
+1 results.1.json results.2.json cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Omon.tob.gn A NEW-Retratction!
+1 results.1.json results.2.json cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Omon.thkcello.gn D New-Dataset!
+v20180117 v20180118
+1 results.1.json results.2.json cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.CFmon.rlucs4co2.gr E New-version v20180118 v20180117
+
+BEGIN ROUND 2
+
+2 results.2.json results.3.json cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Omon.tob.gn B OLD-Retratction!
+2 results.2.json results.3.json cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Amon.clivi.gr1 A NEW-Retratction!
+2 results.2.json results.3.json cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Amon.prw.gr1 D New-Dataset!
+v20180117 v20180118
+2 results.2.json results.3.json cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Amon.rsdt.gr E New-version v20180118 v20180117
+
+BEGIN ROUND 3
+
+3 results.3.json results.4.json cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Amon.evspsbl.gr A NEW-Retratction!
+3 results.3.json results.4.json cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Omon.tob.gn B OLD-Retratction!
+3 results.3.json results.4.json cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Amon.clivi.gr1 B OLD-Retratction!
+3 results.3.json results.4.json cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.AERmon.wetso2.gr1 D New-Dataset!
+v20180117 v20180118
+3 results.3.json results.4.json cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Omon.thkcello.gn E New-version v20180118 v20180117
+
+BEGIN ROUND 4
+
+4 results.4.json results.5.json cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Amon.evspsbl.gr B OLD-Retratction!
+4 results.4.json results.5.json cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Omon.tob.gn B OLD-Retratction!
+4 results.4.json results.5.json cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Amon.clivi.gr1 B OLD-Retratction!
+4 results.4.json results.5.json cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.CFmon.rlucs4co2.gr A NEW-Retratction!
+4 results.4.json results.5.json cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.CFmon.rlucs4co2.gr A NEW-Retratction!
+4 results.4.json results.5.json cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Emon.somint.gn D New-Dataset!
+v20180117 v20180118
+4 results.4.json results.5.json cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Amon.rsdt.gr E New-version v20180118 v20180117
+v20180118 v20180118
+4 results.4.json results.5.json cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Amon.rsdt.gr F Not-new-version v20180118 v20180118

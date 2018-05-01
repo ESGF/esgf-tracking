@@ -1,0 +1,34 @@
+{
+    "response": {
+        "docs": [
+            {
+                "_timestamp": "2018-01-01T00:02:30\n",
+                "latest": true,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Lmon.baresoilFrac.gr",
+                "retracted": false,
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T00:07:30\n",
+                "latest": true,
+                "master_id": "cmip6.ScenarioMIP.MOHC.HadGEM3-GC31-LL.ssp245.r1i1p1f1.SImon.simass.gn",
+                "retracted": false,
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T00:12:30\n",
+                "latest": true,
+                "master_id": "cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Amon.vas.gr1",
+                "retracted": false,
+                "version": "v20180128"
+            },
+            {
+                "_timestamp": "2018-01-01T00:17:30\n",
+                "latest": true,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.CFday.rsdt.gr",
+                "retracted": false,
+                "version": "v20180117"
+            }
+        ]
+    }
+}
