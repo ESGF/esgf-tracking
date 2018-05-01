@@ -3,7 +3,7 @@ import json
 from esgcet.exceptions import ESGMethodNotImplemented
 
 
-from db_access import ESGF_DB_Access
+from db_access import ESG_DB_Access
 
 class BaseMatcher :
 
