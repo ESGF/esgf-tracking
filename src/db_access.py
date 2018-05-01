@@ -1,7 +1,7 @@
 # for now a hardcoded dictionary
 from sqlalchemy import create_engine
 # from site_profile import get_prop_st
-
+import os
 
 PASS_FN = '/esg/config/.esg_pg_pass'
 
