@@ -8,10 +8,17 @@ PASS_FN = '/esg/config/.esg_pg_pass'
 db_engine = None
 has_db = False
 
-def  init_db():
+
+class ESG_DB_Access:
+
+    def  __init__():
     
+
+    self.engine = None
+    self.has_db = False
+
     if not os.path.exists(PASS_FN):
-        return (False, None)
+        return 
     
     f = open(PASS_FN)
 
@@ -27,20 +34,20 @@ def  init_db():
     db_database = 'esgcet' # properties_obj.get('db.database', 'esgcet')
     db_str = ( 'postgresql://' + db_user +  ':' + passwd + '@' + db_host  +  ':' + db_port+ '/' + db_database)
 
-    engine = create_engine(db_str)
+    
+    self.engine = create_engine(db_str)
+    self.has_db = True
+    
 
-    return True, engine
+    def get_table():
 
 
-def get_table():
+        if not self.has_db:
+            return None
 
+        qstr = "select * from esgf_subscriptions.subscribers"
 
-    if not has_db:
-        return None
+        db_result = db_engine.execute(qstr)
 
-    qstr = "select * from esgf_subscriptions.subscribers"
-
-    db_result = db_engine.execute(qstr)
-
-    return db_result
+        return db_result
 
