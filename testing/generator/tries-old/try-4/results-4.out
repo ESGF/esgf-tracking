@@ -1,0 +1,6 @@
+
+BEGIN ROUND 0
+
+> /Users/ames4/git-repos/esgf-tracking/work/search-test/compare.py(48)convert_test()
+-> outpre = str(case) + " " + oldfn + " " + newfn
+(Pdb) 

@@ -1,0 +1,42 @@
+{
+    "response": {
+        "docs": [
+            {
+                "_timestamp": "2018-01-01T00:02:30\n",
+                "experiment_id": "1pctCO2",
+                "latest": true,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.CFmon.tntr.gr",
+                "retracted": false,
+                "variable_id": "tntr",
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T00:07:30\n",
+                "experiment_id": "1pctCO2",
+                "latest": true,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Lmon.mrro.gr",
+                "retracted": false,
+                "variable_id": "mrro",
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T00:12:30\n",
+                "experiment_id": "1pctCO2",
+                "latest": true,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Lmon.lai.gr",
+                "retracted": false,
+                "variable_id": "lai",
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T00:17:30\n",
+                "experiment_id": "piControl",
+                "latest": true,
+                "master_id": "cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Emon.tnhusscp.gr1",
+                "retracted": false,
+                "variable_id": "tnhusscp",
+                "version": "v20180128"
+            }
+        ]
+    }
+}

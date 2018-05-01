@@ -1,0 +1,90 @@
+{
+    "response": {
+        "docs": [
+            {
+                "_timestamp": "2018-02-03T20:00:00\n",
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Amon.evspsbl.gr",
+                "retracted": true,
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-04T12:00:00\n",
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Emon.thetaot.gn",
+                "retracted": false,
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-06T20:00:00\n",
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Amon.rsdt.gr",
+                "retracted": false,
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-09T04:00:00\n",
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.CFmon.rlucs4co2.gr",
+                "retracted": false,
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-20T20:00:00\n",
+                "master_id": "cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Omon.tob.gn",
+                "retracted": true,
+                "version": "v20180128"
+            },
+            {
+                "_timestamp": "2018-01-27T20:00:00\n",
+                "master_id": "cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Amon.clivi.gr1",
+                "retracted": true,
+                "version": "v20180128"
+            },
+            {
+                "_timestamp": "2018-01-16T04:00:00\n",
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Omon.thkcello.gn",
+                "retracted": false,
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-02-10T20:00:00\n",
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.CFmon.rlucs4co2.gr",
+                "retracted": true,
+                "version": "v20180118"
+            },
+            {
+                "_timestamp": "2018-01-23T04:00:00\n",
+                "master_id": "cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Amon.prw.gr1",
+                "retracted": false,
+                "version": "v20180128"
+            },
+            {
+                "_timestamp": "2018-01-25T12:00:00\n",
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Amon.rsdt.gr",
+                "retracted": false,
+                "version": "v20180118"
+            },
+            {
+                "_timestamp": "2018-01-30T04:00:00\n",
+                "master_id": "cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.AERmon.wetso2.gr1",
+                "retracted": false,
+                "version": "v20180128"
+            },
+            {
+                "_timestamp": "2018-02-01T12:00:00\n",
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Omon.thkcello.gn",
+                "retracted": false,
+                "version": "v20180118"
+            },
+            {
+                "_timestamp": "2018-02-06T04:00:00\n",
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Emon.somint.gn",
+                "retracted": false,
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-02-08T12:00:00\n",
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Amon.rsdt.gr",
+                "retracted": false,
+                "version": "v20180118"
+            }
+        ]
+    }
+}

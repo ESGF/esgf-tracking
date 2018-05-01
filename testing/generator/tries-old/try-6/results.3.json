@@ -1,0 +1,104 @@
+{
+    "response": {
+        "docs": [
+            {
+                "_timestamp": "2018-01-01T00:02:30\n",
+                "latest": true,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Emon.nep.gr",
+                "retracted": false,
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T00:07:30\n",
+                "latest": true,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.CFmon.tntr.gr",
+                "retracted": false,
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T00:12:30\n",
+                "latest": true,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Eday.ta500.gr",
+                "retracted": false,
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T00:17:30\n",
+                "latest": true,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Amon.tasmax.gr",
+                "retracted": false,
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T00:22:30\n",
+                "latest": true,
+                "master_id": "cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Lmon.evspsblveg.gr1",
+                "retracted": false,
+                "version": "v20180128"
+            },
+            {
+                "_timestamp": "2018-01-01T00:27:30\n",
+                "latest": true,
+                "master_id": "cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.AERmon.emioa.gr1",
+                "retracted": false,
+                "version": "v20180128"
+            },
+            {
+                "_timestamp": "2018-01-01T00:32:30\n",
+                "latest": false,
+                "master_id": "cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Emon.vegFrac.gr1",
+                "retracted": false,
+                "version": "v20180128"
+            },
+            {
+                "_timestamp": "2018-01-01T00:57:30\n",
+                "latest": false,
+                "master_id": "cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Amon.cl.gr1",
+                "retracted": true,
+                "version": "v20180128"
+            },
+            {
+                "_timestamp": "2018-01-01T00:42:30\n",
+                "latest": true,
+                "master_id": "cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Lmon.prveg.gr1",
+                "retracted": false,
+                "version": "v20180128"
+            },
+            {
+                "_timestamp": "2018-01-01T01:17:30\n",
+                "latest": false,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.day.tas.gr",
+                "retracted": true,
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T00:52:30\n",
+                "latest": false,
+                "master_id": "cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Emon.vegFrac.gr1",
+                "retracted": false,
+                "version": "v20180129"
+            },
+            {
+                "_timestamp": "2018-01-01T01:02:30\n",
+                "latest": true,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Amon.rsut.gr",
+                "retracted": false,
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T01:07:30\n",
+                "latest": true,
+                "master_id": "cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1.1pctCO2.r99i1p1f2.Emon.intvadse.gr",
+                "retracted": false,
+                "version": "v20180117"
+            },
+            {
+                "_timestamp": "2018-01-01T01:12:30\n",
+                "latest": true,
+                "master_id": "cmip6.CMIP.NOAA-GFDL.GFDL-CM4.piControl.r1i1p1f1.Emon.vegFrac.gr1",
+                "retracted": false,
+                "version": "v20180130"
+            }
+        ]
+    }
+}
