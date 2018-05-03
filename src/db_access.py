@@ -8,11 +8,13 @@ PASS_FN = '/esg/config/.esg_pg_pass'
 db_engine = None
 has_db = False
 
+import pdb
 
 class ESG_DB_Access:
 
     def  __init__(self):
     
+        pdb.set_trace
 
         self.engine = None
         self.has_db = False
@@ -38,7 +40,6 @@ class ESG_DB_Access:
         self.engine = create_engine(db_str)
         self.has_db = True
     
-
     def get_table(self):
 
 

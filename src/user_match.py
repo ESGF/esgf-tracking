@@ -1,7 +1,7 @@
 import json
 
 from esgcet.exceptions import ESGMethodNotImplemented
-
+from db_access import ESG_DB_Access
 
 class BaseMatcher :
 
@@ -64,7 +64,7 @@ class FileSubscriptionMatcher(SubscriptionMatcher):
 
 class DBSubscriptionMatcher(SubscriptionMatcher):
 
-	def format_kv(row):
+	def format_kv(self, row):
 
 		return {"key": row[1], "value": row[2] }
 
@@ -72,10 +72,10 @@ class DBSubscriptionMatcher(SubscriptionMatcher):
 
 	def db_to_json(self):
 
-		from db_access import ESG_DB_Access
+
 
 		try:  
-			db = ESG_DB_Access
+			db = ESG_DB_Access()
 			dbtable = db.get_table()
 		except:
 			raise 
