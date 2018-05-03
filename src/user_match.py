@@ -70,7 +70,7 @@ class DBSubscriptionMatcher(SubscriptionMatcher):
 
 
 
-	def db_to_json():
+	def db_to_json(self):
 
 		from db_access import ESG_DB_Access
 
