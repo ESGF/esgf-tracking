@@ -1,5 +1,5 @@
 import sys, json
-from user_match import FileSubscriptionMatcher
+from user_match import DBSubscriptionMatcher
 from datetime import datetime
 from dateutil import parser as duparser
 from dateutil import tz
@@ -43,7 +43,7 @@ SUBSFN = "/Users/ames4/git-repos/esgf-tracking/work/search-test/subs.json"
 
 def subs_test(oldfn, newfn, case, intime):
 	search_res = compare_results(oldfn, newfn, case, intime)
-	matcher = FileSubscriptionMatcher(SUBSFN)
+	matcher = DBSubscriptionMatcher()
 
 	user_res = matcher.match(search_res)
 
