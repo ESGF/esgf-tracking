@@ -1,15 +1,15 @@
 waittime=20
-initial_pub_count=8  # set this to several query periods before updates and retractions can begin
+initial_pub_count=1  # set this to several query periods before updates and retractions can begin
 
-path_prefix=$1
-flst=$2
+#path_prefix=$1
+flst=$1
 
 i=0
 
-for fn in `cat $flst | python rnd_list.py` ; do
+for dn in `python rnd_list.py $flst` ; do
 
     
-    dn=`dirname $fn`
+#    dn=`dirname $fn`
    
     starttime=`date +%s`
 
@@ -29,4 +29,9 @@ for fn in `cat $flst | python rnd_list.py` ; do
     rm -rf mapfiles
     
     i=$(( $i + 1 ))
+
+    if [ $i == $initial_pub_count ] ; then
+	echo "count reached"
+	exit
+    fi
 done
