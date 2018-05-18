@@ -1,5 +1,5 @@
 waittime=20
-initial_pub_count=1  # set this to several query periods before updates and retractions can begin
+initial_pub_count=6  # set this to several query periods before updates and retractions can begin
 
 #path_prefix=$1
 flst=$1
@@ -24,9 +24,11 @@ for dn in `python rnd_list.py $flst` ; do
     endtime=`date +%s`
     gentime=$(( $waittime - $(( $endtime - $starttime  )) ))
 
-    sleep $gentime
 
     rm -rf mapfiles
+
+    echo sleeping $gentime
+    sleep $gentime
     
     i=$(( $i + 1 ))
 
