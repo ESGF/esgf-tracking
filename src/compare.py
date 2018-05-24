@@ -4,12 +4,14 @@ from datetime import datetime
 from dateutil import parser as duparser
 from dateutil import tz
 
+from time import time
+
 VERBOSE = True  # enhanced print
 begin_datetimestamp = 48 * 365.25 * 24 * 3600
 #UPDATE_TYPE = "DAYS"
 UPDATE_TYPE = "SECOND"
 #UPDATE_PERIOD = 7 * 24 * 3600  # change to an argument
-UPDATE_PERIOD = 20 * 60
+UPDATE_PERIOD = 60
 UPDATE_PERIOD_DAYS = 7
 INPUT_FILE = "subscriptions.json"
 
@@ -160,7 +162,7 @@ advance = int(sys.argv[1])
 infiles = sys.argv[2:]
 
 
-cur_ts = begin_datetimestamp + (UPDATE_PERIOD  * (1 + advance))
+#cur_ts = begin_datetimestamp + (UPDATE_PERIOD  * (1 + advance))
 
 for case, fn in enumerate(infiles[0:-1]):
 
@@ -169,11 +171,11 @@ for case, fn in enumerate(infiles[0:-1]):
 	print "BEGIN ROUND", case
 	print
 
-	cur_ts += UPDATE_PERIOD
+	cur_ts = time()
 	idx = case +1
 
-#	print "Time of query: " , cur_ts
-	convert_test(fn, infiles[idx], case, datetime.utcfromtimestamp(cur_ts) )	
-	subs_test(fn, infiles[idx], case, datetime.utcfromtimestamp(cur_ts) )	
+	print "Time of query: " , cur_ts
+#	convert_test(fn, infiles[idx], case, datetime.utcfromtimestamp(cur_ts) )	
+	subs_test(fn, infiles[idx], case, datetime.utcnow() )	
 
 
