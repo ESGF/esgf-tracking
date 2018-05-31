@@ -11,7 +11,7 @@ begin_datetimestamp = 48 * 365.25 * 24 * 3600
 #UPDATE_TYPE = "DAYS"
 UPDATE_TYPE = "SECOND"
 #UPDATE_PERIOD = 7 * 24 * 3600  # change to an argument
-UPDATE_PERIOD = 60
+UPDATE_PERIOD = int(sys.argv[1])
 UPDATE_PERIOD_DAYS = 7
 INPUT_FILE = "subscriptions.json"
 
@@ -157,7 +157,7 @@ if len(sys.argv) < 4:
 	print "minimum two files required"
 	exit(-1)
 
-advance = int(sys.argv[1])
+#advance = int(sys.argv[1])
 
 infiles = sys.argv[2:]
 
@@ -176,6 +176,6 @@ for case, fn in enumerate(infiles[0:-1]):
 
 	print "Time of query: " , cur_ts
 #	convert_test(fn, infiles[idx], case, datetime.utcfromtimestamp(cur_ts) )	
-	subs_test(fn, infiles[idx], case, datetime.utcnow() )	
+	subs_test(fn, infiles[idx], case, datetime.now(tz.tzutc()) )	
 
 

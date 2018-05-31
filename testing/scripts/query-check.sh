@@ -21,7 +21,7 @@ for i in `seq 1 $tries` ; do
 
 	wget -O res-new.json $qstr 
 
-	python ../../src/compare.py 0 res.json res-new.json
+	python ../../src/compare.py $sleeptime res.json res-new.json
 
 	mv res.json res.json.$i.old
 	mv res-new.json res.json
