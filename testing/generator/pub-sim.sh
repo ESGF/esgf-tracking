@@ -1,5 +1,5 @@
 waittime=20
-initial_pub_count=6  # set this to several query periods before updates and retractions can begin
+initial_pub_count=$2  # set this to several query periods before updates and retractions can begin
 
 #path_prefix=$1
 flst=$1

@@ -6,6 +6,8 @@ from dateutil import tz
 
 from time import time
 
+import os
+
 VERBOSE = True  # enhanced print
 begin_datetimestamp = 48 * 365.25 * 24 * 3600
 #UPDATE_TYPE = "DAYS"
@@ -176,6 +178,9 @@ for case, fn in enumerate(infiles[0:-1]):
 
 	print "Time of query: " , cur_ts
 #	convert_test(fn, infiles[idx], case, datetime.utcfromtimestamp(cur_ts) )	
-	subs_test(fn, infiles[idx], case, datetime.now(tz.tzutc()) )	
+#	thetime=datetime.now(tz.tzutc()) 
+	thetime=datetime.fromtimestamp(os.stat(infiles[1]).st_mtime, tz.tzutc())
+	os.stat("res.json").st_mtime	
+	subs_test(fn, infiles[idx], case, thetime)	
 
 
