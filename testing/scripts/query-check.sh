@@ -10,7 +10,7 @@ time wget -O res.json $qstr
 
 tries=$1
 
-sleeptime=60
+sleeptime=$2  # TODO - refactor the time and tries as parameters
 
 for i in `seq 1 $tries` ; do
 
