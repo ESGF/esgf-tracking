@@ -1,4 +1,6 @@
-
+dt=`date +%s`
+mkdir old-res/res-$dt
+mv *.log *.json *.old old-res/res-$dt
 
 
 #sleep 50
