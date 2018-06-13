@@ -6,6 +6,8 @@ flst=$1
 
 i=0
 
+
+
 for dn in `python rnd_list.py $flst` ; do
 
     
@@ -13,19 +15,28 @@ for dn in `python rnd_list.py $flst` ; do
    
     starttime=`date +%s`
 
-#    if [ $i -lt $initial_pub_count ]  ; then
-    echo Processing $dn
+    cond=1
 
-    esgmapfile --project cmip6test --no-checksum $dn
-    esgpublish --project cmip6test --map mapfiles
-    esgpublish --project cmip6test --map mapfiles --noscan --thredds
-    esgpublish --project cmip6test --map mapfiles --noscan --publish
+    if [ $i -gt $initial_pub_count ]  ; then
+        cond=0
+    fi
 
-    endtime=`date +%s`
-    gentime=$(( $waittime - $(( $endtime - $starttime  )) ))
+    if [  ]
+
+    if [ cond -eq 1 ]    ; then
+        echo Processing $dn
+
+        esgmapfile --project cmip6test --no-checksum $dn
+        esgpublish --project cmip6test --map mapfiles
+        esgpublish --project cmip6test --map mapfiles --noscan --thredds
+        esgpublish --project cmip6test --map mapfiles --noscan --publish
+
+        endtime=`date +%s`
+        gentime=$(( $waittime - $(( $endtime - $starttime  )) ))
 
 
-    rm -rf mapfiles
+        rm -rf mapfiles
+    fi  
 
     echo sleeping $gentime
     sleep $gentime

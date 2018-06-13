@@ -4,6 +4,13 @@ from datetime import datetime
 from dateutil import parser as duparser
 from dateutil import tz
 
+from time import time
+
+from esgf_feedback.send_job import process_users
+
+
+SEND_EMAIL = False
+
 VERBOSE = True  # enhanced print
 begin_datetimestamp = 48 * 365.25 * 24 * 3600
 #UPDATE_TYPE = "DAYS"
@@ -47,7 +54,10 @@ def subs_test(oldfn, newfn, case, intime):
 
 	user_res = matcher.match(search_res)
 
-	print json.dumps(user_res, indent=1)
+	if SEND_EMAIL:
+		process_users(user_res)
+	else:
+		print json.dumps(user_res, indent=1)
 
 
 
