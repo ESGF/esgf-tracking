@@ -1,10 +1,12 @@
-waittime=20
-initial_pub_count=6  # set this to several query periods before updates and retractions can begin
+waittime=60
+initial_pub_count=$2  # set this to several query periods before updates and retractions can begin
 
 #path_prefix=$1
 flst=$1
 
 i=0
+
+
 
 for dn in `python rnd_list.py $flst` ; do
 
@@ -13,19 +15,22 @@ for dn in `python rnd_list.py $flst` ; do
    
     starttime=`date +%s`
 
-#    if [ $i -lt $initial_pub_count ]  ; then
-    echo Processing $dn
+    
 
-    esgmapfile --project cmip6test --no-checksum $dn
-    esgpublish --project cmip6test --map mapfiles
-    esgpublish --project cmip6test --map mapfiles --noscan --thredds
-    esgpublish --project cmip6test --map mapfiles --noscan --publish
+    #if [ cond -eq 1 ]    ; then
+        echo Processing $dn
 
-    endtime=`date +%s`
-    gentime=$(( $waittime - $(( $endtime - $starttime  )) ))
+        esgmapfile --project cmip6test --no-checksum $dn
+        esgpublish --project cmip6test --map mapfiles
+        esgpublish --project cmip6test --map mapfiles --noscan --thredds
+        esgpublish --project cmip6test --map mapfiles --noscan --publish
+
+        endtime=`date +%s`
+        gentime=$(( $waittime - $(( $endtime - $starttime  )) ))
 
 
-    rm -rf mapfiles
+        rm -rf mapfiles
+    #fi  
 
     echo sleeping $gentime
     sleep $gentime

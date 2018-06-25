@@ -27,8 +27,14 @@ class SubscriptionMatcher(BaseMatcher):
 	def match_record(self, pairs, dataset):
 
 		for pair in pairs:
-
-			if not dataset[pair["key"]] in pair["value"]:
+			lookup = dataset[pair["key"]]
+			values = pair["value"].split(',')
+			if type(lookup) is list:
+				assert(len(lookup) == 1)
+				val = lookup[0]
+			else:
+				val = lookup
+			if not val in values:
 				return False
 
 		return True
