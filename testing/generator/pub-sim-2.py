@@ -1,10 +1,10 @@
-import random, json, os
+import random, json, os, sys
 from time import time, sleep
 
 from datetime import date, timedelta
 
 
-PUB_INTERVAL = float(sys,argv[3])
+PUB_INTERVAL = float(sys.argv[3])
 
 
 DEBUG = False
@@ -71,7 +71,7 @@ def update_dset(path):
 	files = listdir(path)
 
 	exec_cmd("mkdir " + prepath + 'files/d' + newverstr)
-	exec_cmd("cd " + prepath + '; ln -s files/d' + newverstr ' v' + newverstr)
+	exec_cmd("cd " + prepath + '; ln -s files/d' + newverstr + ' v' + newverstr)
 
 	destpath = prepath + '/v' + newverstr
 
@@ -108,7 +108,6 @@ def retract_dset(dset):
 def main():
 
 	print "running main"
-	return	
 
 	for i, idx in enumerate(dsarr): 
 
