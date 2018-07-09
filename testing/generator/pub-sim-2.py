@@ -47,8 +47,8 @@ quick_retract = -1
 
 def exec_cmd(cmd):
 
-# Dry run mode
-	print cmd
+# Dry run mode: print cmd
+	os.system(cmd)
 
 def update_dset(path):
 
