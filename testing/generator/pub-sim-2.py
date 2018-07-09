@@ -7,7 +7,7 @@ from datetime import date, timedelta
 PUB_INTERVAL = float(sys.argv[3])
 
 
-DEBUG = False
+DEBUG = True
 
 TOT_PERIODS = int(sys.argv[2])
 
@@ -17,7 +17,7 @@ dataset_paths = sys.argv[1]
 
 for line in open(dataset_paths):
 
-	dset_list.append(line)
+	dset_list.append(line.rstrip())
 
 
 rnd = random.random
@@ -65,10 +65,10 @@ def update_dset(path):
 
 	newverstr = (version_date + td).isoformat().replace('-','')
 
-	prepath = '/'.join(path[0:-1])
+	prepath = '/'.join(parts[0:-1])
 
 
-	files = os.listdir(path)
+	files = os.listdir(path.rstrip())
 
 	exec_cmd("mkdir " + prepath + 'files/d' + newverstr)
 	exec_cmd("cd " + prepath + '; ln -s files/d' + newverstr + ' v' + newverstr)
@@ -98,7 +98,7 @@ def publish_path(path):
 def path_to_dset(path):
 
 	parts = path.split('/')
-	return '.'.join(path[3:-1]) + '#' + path[-1][1:]
+	return '.'.join(parts[3:-1]) + '#' + parts[-1][1:]
 
 def retract_dset(dset):
 
@@ -119,6 +119,8 @@ def main():
 		if i < BASE:
 			dset = dset_list[idx]
 			print i, dset, "D-New-Dataset"
+			pub_list.append([dset, "PUB"])
+
 			publish_path(dset)
 		else:
 			if i % PERIOD <  (PERIOD -2):
@@ -174,7 +176,7 @@ def main():
 
 	
 
-				print i, choice, dset, "E-New-version"
+				print i, choice, dset_rec, "E-New-version"
 				newver  = update_dset(dset_rec[0])
 				pub_list[choice] = [newver, "PUB" ] 
 
@@ -182,19 +184,16 @@ def main():
 				assert(i % PERIOD == PERIOD -1)
 
 
-				choice = -1
-				while True:
-
-					if p_count == (TOT_PERIODS - 1):
-						# quick retraction
-						choice = ((TOT_PERIODS - 2) * PERIOD)
-						if DEBUG:
-							print choice, len(outlst), "C-Quick-Retraction"
-						ret_str = "C-Quick-Retraction"
-					else:
-						choice = int(rnd() * (len(outlst) -3))
-						ret_str = "A-New-Retraction"
-						quick_retract= choice
+				if p_count == (TOT_PERIODS - 1):
+					# quick retraction
+					choice = ((TOT_PERIODS - 2) * PERIOD)
+					if DEBUG:
+						print choice, len(pub_list), "C-Quick-Retraction"
+					ret_str = "C-Quick-Retraction"
+				else:
+					choice = int(rnd() * (len(pub_list) -PERIOD))
+					ret_str = "A-New-Retraction"
+					quick_retract= choice
 					
 				dset_rec = pub_list[choice]
 
@@ -205,6 +204,7 @@ def main():
 				# outlst[choice]["_timestamp"] = ts
 				print i, choice, dset_rec, ret_str
 				dset = dset_rec[0]
+
 				retract_dset(path_to_dset(dset))
 				pub_list[choice] = [dset, "RETR"]
 
