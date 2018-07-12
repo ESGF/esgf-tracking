@@ -48,6 +48,7 @@ quick_retract = -1
 def exec_cmd(cmd):
 
 # Dry run mode: print cmd
+	print "running " + cmd
 	os.system(cmd)
 
 def update_dset(path):
@@ -70,7 +71,7 @@ def update_dset(path):
 
 	files = os.listdir(path.rstrip())
 
-	exec_cmd("mkdir " + prepath + 'files/d' + newverstr)
+	exec_cmd("mkdir " + prepath + '/files/d' + newverstr)
 	exec_cmd("cd " + prepath + '; ln -s files/d' + newverstr + ' v' + newverstr)
 
 	destpath = prepath + '/v' + newverstr
