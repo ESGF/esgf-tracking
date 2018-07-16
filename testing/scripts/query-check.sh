@@ -5,10 +5,11 @@ mv *.log *.json *.old old-res/res-$dt
 
 #sleep 50
 
-qstr='https://esgf-dev1.llnl.gov/esg-search/search/?project=cmip6test&limit=10000&format=application%2fsolr%2bjson'
+# configure the hostname
+qstr='http://cwt-node.llnl.gov/esg-search/search/?project=cmip6test&limit=10000&format=application%2fsolr%2bjson'
 
 echo $qstr
-time wget -O res.json $qstr
+time wget --no-check-certificate -O res.json $qstr
 
 tries=$1
 
@@ -21,7 +22,7 @@ for i in `seq 1 $tries` ; do
 	# may need to adjust if query latency impacts time
 	sleep $sleeptime
 
-	wget -O res-new.json $qstr 
+	wget --no-check-certificate -O res-new.json $qstr 
 
 	python ../../src/compare.py $sleeptime res.json res-new.json
 
