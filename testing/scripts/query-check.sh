@@ -1,5 +1,5 @@
 dt=`date +%s`
-mkdir old-res/res-$dt
+mkdir -p old-res/res-$dt
 mv *.log *.json *.old old-res/res-$dt
 
 

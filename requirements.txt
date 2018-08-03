@@ -1,3 +1,4 @@
 sqlalchemy
 dateutil
 esgf-feedback
+psycopg2
