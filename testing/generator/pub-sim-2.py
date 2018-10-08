@@ -3,6 +3,12 @@ from time import time, sleep
 
 from datetime import date, timedelta
 
+if len(sys.argv) < 4:
+	print "Usage: python pub-sim-2.py /path/to/datasets <count> <interval>"
+	print "<count> = number of datasets to publish"
+	print "<interval> = time between start of each publication task"
+	exit(-1)
+
 
 PUB_INTERVAL = float(sys.argv[3])
 
@@ -216,9 +222,6 @@ def main():
 		eltime = endtime - starttime
 
 		sleep (PUB_INTERVAL - eltime )
-
-
-	assert(p_count == TOT_PERIODS)
 
 
 if __name__ == '__main__':
