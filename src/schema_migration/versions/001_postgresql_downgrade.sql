@@ -1,1 +1,1 @@
-DROP SCHEMA IF EXISTS esgf_subscriptions CASCADE;
+DROP SCHEMA IF EXISTS esgf_subscription CASCADE;
