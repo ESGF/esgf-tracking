@@ -1,6 +1,7 @@
 create schema esgf_subscription ;
 
-create table esgf_subscription.subscribers (id serial primary key, email varchar(256), period integer) ;
+create table esgf_subscription.subscribers (id serial primary key,  user_id integer 
+	, period integer) ;
 
 create table esgf_subscription.terms (id serial primary key, subscribers_id integer, keyname varchar(64), valuename varchar(64), 
 FOREIGN KEY (subscribers_id)
